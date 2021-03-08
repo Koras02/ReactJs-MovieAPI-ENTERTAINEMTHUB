@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from './axios';
+import "./Row.css"
 
 const base_url = "https://image.tmdb.org/t/p/original/"  // 기본 original 주소 가져오기
 
@@ -32,7 +33,8 @@ function Row({ title, fetchUrl }) {
                     // eslint-disable-next-line no-undef
                     <img
                         className="row_poster"
-                        src={`${base_url}${movie.poster_path}`} alt={movie.name} />  // 이미지 제목 map함수로 불러온다.
+                        src={`${base_url}${movie.poster_path}`}
+                        alt={movie.name} />  // 이미지 제목 map함수로 불러온다.
                 ))}
             </div>
         </div>
