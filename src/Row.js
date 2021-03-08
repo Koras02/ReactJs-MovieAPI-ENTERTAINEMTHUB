@@ -5,7 +5,7 @@ import "./Row.css"
 const base_url = "https://image.tmdb.org/t/p/original/"  // 기본 original 주소 가져오기
 
 // 레이아웃 Row 작성
-function Row({ title, fetchUrl }) {
+function Row({ title, fetchUrl, isLargeRow }) {
     const [movies, setMovies] = useState([]);
 
     //  snippet 사용
@@ -33,8 +33,9 @@ function Row({ title, fetchUrl }) {
                     // eslint-disable-next-line no-undef
                     <img
                         key={movie.id}
-                        className="row__poster"
-                        src={`${base_url}${movie.poster_path}`}
+                        className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                        src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
+                            }`}
                         alt={movie.name}
                     />  // 이미지 제목 map함수로 불러온다.
                 ))}
