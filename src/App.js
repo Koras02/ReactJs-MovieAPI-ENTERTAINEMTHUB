@@ -2,18 +2,20 @@ import React from 'react';
 import './App.css'
 import Row from './Row';
 import requests from './Requests';
+import Banner from './Banner';
 
 // fetchUrl로 requests 에 있는 api 가져오기
 
 function App() {
   return (
     <div className="app">
-      <h1>
-        Hey Clever Programmer! Let's build Netflix Clone Front-end today 🚀
-        </h1>
+      {/*  Navbar */}
+      <Banner />
+      {/* Banner  */}
       <Row
         title="NETFLEX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow={true}
       />
       <Row
         title="Trending Now"
