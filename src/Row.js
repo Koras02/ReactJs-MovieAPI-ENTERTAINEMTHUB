@@ -29,12 +29,14 @@ function Row({ title, fetchUrl }) {
             {/* Container 부분 */}
             <div className="row__posters">
                 {/* row 포스터 */}
-                {movies.map(movie => (
+                {movies.map((movie) => (
                     // eslint-disable-next-line no-undef
                     <img
-                        className="row_poster"
+                        key={movie.id}
+                        className="row__poster"
                         src={`${base_url}${movie.poster_path}`}
-                        alt={movie.name} />  // 이미지 제목 map함수로 불러온다.
+                        alt={movie.name}
+                    />  // 이미지 제목 map함수로 불러온다.
                 ))}
             </div>
         </div>
