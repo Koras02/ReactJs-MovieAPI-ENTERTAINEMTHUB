@@ -3,12 +3,14 @@ import './App.css'
 import Row from './Row';
 import requests from './Requests';
 import Banner from './Banner';
+import Nav from './Nav';
 
 // fetchUrl로 requests 에 있는 api 가져오기
 
 function App() {
   return (
     <div className="app">
+      <Nav />
       {/*  Navbar */}
       <Banner />
       {/* Banner  */}
