@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react'
-import axios from './axios';
-import "./Row.css";
+import axios from '../Axios/axios';
+import "./Trailer.css";
 import YouTube from 'react-youtube';
 import movieTrailer from "movie-trailer"
 
@@ -15,7 +15,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
     // Options for react-youtube
     const opts = {
-        height: "390",
+        height: "190",
         width: "100%",
         playerVars: {
             autoplay: 1,
@@ -38,7 +38,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             movieTrailer(movie?.name || "")
                 .then((url) => {
                     const urlParams = new URLSearchParams(new URL(url).search);
-                    setTrailerUrl(urlParams.get("v"));
+                    setTrailerUrl(urlParams.get(""));
 
                 })
                 .catch((error) => console.log(error))
@@ -61,7 +61,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
                     />
                 )}
             </div>
+            <div>
             {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+            </div>
         </div>
     );
 }

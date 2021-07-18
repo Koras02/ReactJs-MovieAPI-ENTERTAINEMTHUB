@@ -7,7 +7,7 @@ const instance = axios.create({
 });
 
 // // https://api.themoviedb.org/3/foo_bar 에 있는 foo-bar 호출 
-// instance.get('/foo-bar');
+instance.get('/foo-bar');
 
 
 export default instance;
