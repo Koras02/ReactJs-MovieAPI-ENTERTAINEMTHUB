@@ -1,5 +1,5 @@
 .banner {
-    color: rgb(219, 208, 221);
+    color: rgb(251, 253, 255);
     object-fit: contain;
     height: 500px;
     padding-top:90px;
@@ -13,7 +13,7 @@
 }
 
 .banner__title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight:900;
   padding-bottom: 1rem;
   margin-bottom:20px;
@@ -23,7 +23,7 @@
     width: 45rem;
     line-height: 1.8;
     padding-top:1rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     max-width:360px;
     height:90px;
 }
