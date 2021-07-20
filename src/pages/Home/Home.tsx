@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import { isMobile } from 'react-device-detect';
 import Content from '../../components/Content';
- 
 import Row from '../../components/Row'
 import * as BREAKPOINTS from '../../constants/breakpoints';
 import { HoveredContent } from '../../types';
@@ -14,7 +13,7 @@ export default function Home() {
     const homeRef = useRef<HTMLDivElement>(null);
     const contentsWrappersRef = useRef<{ [key: string]: HTMLDivElement | null}>({});
     const slidersRef = useRef<{ [key:string] : HTMLDivElement | null}>({});
-    const contentThumbnailRef = useRef<{ [key:string]: HTMLDivElement | null}>({});
+    const contentThumbnailsRef = useRef<{ [key:string]: HTMLDivElement | null}>({});
 
 
     const [isScrollDown, setIsScrollDown] = useState(false);
@@ -65,13 +64,13 @@ export default function Home() {
      };
 
      const getHomeStyle = (): React.CSSProperties | undefined => {
-         if(hasClickedContent) {
-             return {
-                 overflow: 'hidden',
-                 paddingRight: getHomePaddingRight(),
-             };
-         }
-     };
+        if (hasClickedContent) {
+          return {
+            overflow: 'hidden',
+            paddingRight: getHomePaddingRight(),
+          };
+        }
+      };
 
      useEffect(() => {
          if (hasClickedContenteThumbnail) {
@@ -94,32 +93,18 @@ export default function Home() {
     
     
    return (
-       <Styled.Container onScroll={handleScroll} style={getHomeStyle()} ref={homeRef}>
+
+    <Styled.Container onScroll={handleScroll} style={getHomeStyle()} ref={homeRef}>
            <Styled.Header className={isScrollDown ? 'scroll-down' : ''}>
-               <Styled.LogoLink href="#" aria-label="Netflix Clone" tabIndex={content ? - 1: undefined}>
-                   NetFlix한국
-               </Styled.LogoLink>
            </Styled.Header>
            <Styled.Main>
-               <Styled.Notification>
-                   모든 TV 프로그램 데이터베이스는
-               <Styled.TMDbLogo
-                  href="https://www.themoviedb.org/"
-                  aria-label="The Movie DB"
-                  tabIndex={content ? -1 : undefined}
-                  >
-                      <img
-                        src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg"
-                        alt="NetFlix로고"
-                      />
-                      에서 지원
-                  </Styled.TMDbLogo>
+ 
                   {tvGenres.map((tvGenre) => (
                         <Row
-                            key={tvGenre.id}
+                             key={tvGenre.id}
                             contentsWrappersRef={contentsWrappersRef}
                             slidersRef={slidersRef}
-                            contentThumbnailsRef={contentThumbnailRef}
+                            contentThumbnailsRef={contentThumbnailsRef}
                             tvGenre={tvGenre}
                             sliderContentCount={sliderContentCount}
                             hasClickedContent={hasClickedContent}
@@ -134,7 +119,7 @@ export default function Home() {
                         homeRef={homeRef}
                         contentsWrappersRef={contentsWrappersRef}
                         slidersRef={slidersRef}
-                        contentThumbnailsRef={contentThumbnailRef}
+                        contentThumbnailsRef={contentThumbnailsRef}
                         content={content}
                         setContent={setContent}
                         contentWidth={contentWidth}
@@ -143,7 +128,6 @@ export default function Home() {
                         hasContentExpanded={hasContentExpanded}
                         />
                   )}
-               </Styled.Notification>
            </Styled.Main>
        </Styled.Container>
    )    

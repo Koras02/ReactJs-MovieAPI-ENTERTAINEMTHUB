@@ -40,7 +40,7 @@ export default function Row({
       let links = [];
       for (let i = 1; i <= pageCount; i++) {
         links.push(
-          `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=ko&sort_by=popularity.desc&page=${i}&with_networks=213&with_genres=${id}`
+          `https://api.themoviedb.org/3/discover/tv?api_key=7db8b1ffbba88aaa67068565d84fe99f&language=ko&sort_by=popularity.desc&page=${i}&with_networks=213&with_genres=${id}`
         );
       }
       return links;
@@ -60,7 +60,7 @@ export default function Row({
       setTvShows(filteredTvShows);
     };
 
-    // setTvShows(getMockTvShows(id));
+    // // setTvShows(getMockTvShows(id));
     initTvShows();
   }, [id]);
 

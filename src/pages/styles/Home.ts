@@ -14,7 +14,7 @@ export const Container = styled.div`
    position: relative;
    max-width: 18.75rem;
    max-height: 100vh;
-   overflow-x:hidden;
+   overflow:hidden;
    background-color: var(-gray-900);
    color: var(--gray-100);
 `;

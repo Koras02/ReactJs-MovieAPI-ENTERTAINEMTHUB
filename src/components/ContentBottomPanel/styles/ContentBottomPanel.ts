@@ -4,6 +4,8 @@ import { contentBorderRadius, contentBoxShadow, roundButton } from '../../Conten
 
 export const Container = styled.div`
   // 그림자가 이미지 덮어쓰지 않게 하기 위해 z-index 설정
+  width: 100%;
+  max-height:400px;
   visibility: hidden;
   z-index: -1;
   position: absolute;
@@ -11,7 +13,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   border-bottom-left-radius: ${contentBorderRadius};
   border-bottom-right-radius: ${contentBorderRadius};
   box-shadow: ${contentBoxShadow};
@@ -95,22 +96,24 @@ export const PageLink = styled.a`
 `;
 
 export const Overview = styled.p`
-  white-space: pre-line;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  white-space: line;
+  font-size: 0.99rem;
+  margin-bottom: 0.3rem;
+  margin-top:-9px;
+  line-height:30px;
 
   @media (max-width: ${BREAKPOINTS.LG}) {
-    font-size: 1.125rem;
+    font-size: 0.95rem;
   }
 
   @media (max-width: ${BREAKPOINTS.SM}) {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
 `;
 
 export const Text = styled.p`
   font-size: 1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 
   @media (max-width: ${BREAKPOINTS.LG}) {
     font-size: 0.875rem;

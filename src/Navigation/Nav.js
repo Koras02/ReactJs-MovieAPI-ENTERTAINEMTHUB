@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Nav.css'
+ 
 
 function Nav() {
     const [show, handleShow] = useState(false);
@@ -27,6 +28,7 @@ function Nav() {
                 src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                 alt="Netflix Avatar"
             />
+ 
 
         </div>
     );

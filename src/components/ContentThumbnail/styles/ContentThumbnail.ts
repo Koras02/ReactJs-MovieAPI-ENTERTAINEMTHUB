@@ -20,7 +20,7 @@ export const ImgButton = styled.button`
 `
 
 export const Img = styled.img`
-    width:100%;
+    width:95%;
 `;
 
 export const Title = styled(ContentTitle)``;

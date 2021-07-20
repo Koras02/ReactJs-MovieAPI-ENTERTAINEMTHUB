@@ -6,10 +6,12 @@ export const contentTransitionDuration = 200;
 
 export const Container = styled.div`
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100vw;
+  min-hegiht:90px;
   border-radius: ${contentBorderRadius};
+
   &.clicked {
     // 가장 위에 위치하도록 z-index 설정
     z-index: 4;
@@ -41,19 +43,22 @@ export const ImgContainer = styled.div`
 
 export const Img = styled.img`
   width: 100%;
+ 
+ 
 `;
 
 export const Title = styled.h3`
   user-select: none;
   cursor: pointer;
   position: absolute;
-  bottom: 0.3em;
+  bottom: 0.2em;
   right: 0.4em;
   text-align: right;
   font-family: 'Nanum Brush Script', cursive;
   font-size: 1em;
   mix-blend-mode: luminosity;
   background: radial-gradient(hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0) 100%);
+
   &.short {
     background: radial-gradient(hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0) 70%);
   }
@@ -70,6 +75,7 @@ export const roundButton = styled.button`
   border-radius: 100%;
   background-color: var(--gray-900);
   color: var(--gray-100);
+
   svg {
     position: absolute;
     top: 50%;
@@ -85,6 +91,7 @@ export const CloseButton = styled(roundButton)`
   width: 1em;
   height: 1em;
   transform: scale(0.3);
+
   svg {
     width: 0.8em;
     padding: 0.05em;
